@@ -1350,6 +1350,14 @@ void ATTClass::execWriteReq(uint16_t connectionHandle, uint16_t mtu, uint8_t dle
 
 void ATTClass::handleNotifyOrInd(uint16_t connectionHandle, uint8_t opcode, uint8_t dlen, uint8_t data[])
 {
+  Serial.print(connectionHandle);
+  Serial.print(" ");
+  Serial.print(opcode);
+  Serial.print(" ");
+  Serial.print(dlen);
+  Serial.print(" ");
+  Serial.print(data);
+  Serial.println(" ");
   if (dlen < 2) {
     return; // drop
   }
